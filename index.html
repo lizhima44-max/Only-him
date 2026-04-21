@@ -514,7 +514,7 @@
       He doesn't forget.
     </p>
     <div class="cta-group">
-      <form class="email-form" onsubmit="submitEmail(event,'hero')">
+      <form class="email-form" action="https://formspree.io/f/xwvanjee" method="POST">
         <input class="email-input" type="email" placeholder="your@email.com" required>
         <button class="email-btn" type="submit">Join Waitlist</button>
       </form>
@@ -604,13 +604,10 @@
     Leave your email. Early access members get first entry,<br>
     exclusive companions, and founding member pricing.
   </p>
-  <form class="signup-form" onsubmit="submitEmail(event,'bottom')">
+  <form class="signup-form" action="https://formspree.io/f/xwvanjee" method="POST">
     <input class="email-input" type="email" placeholder="your@email.com" required style="border-right:none;">
     <button class="email-btn" type="submit">Get Early Access</button>
   </form>
-  <div class="success-msg" id="success-msg">
-    We'll find you when it's time. ✦
-  </div>
   <p class="signup-note">No spam. Unsubscribe any time. 18+ only.</p>
 </section>
 
@@ -618,30 +615,5 @@
   <div class="footer-brand">ONLY HIM</div>
   <div class="footer-note">© 2025 · Silicon Town · Early Access</div>
 </footer>
-
-<script>
-function submitEmail(e, source) {
-  e.preventDefault();
-  const form = e.target;
-  const email = form.querySelector('input[type="email"]').value;
-  
-  // Send to formspree or just mailto fallback
-  const subject = encodeURIComponent('Only Him Waitlist');
-  const body = encodeURIComponent('New signup: ' + email + '\nSource: ' + source);
-  
-  // Store locally + show feedback
-  form.style.display = 'none';
-  
-  if (source === 'bottom') {
-    document.getElementById('success-msg').style.display = 'block';
-  } else {
-    form.insertAdjacentHTML('afterend', '<p style="font-family:Cormorant Garamond,serif;font-style:italic;color:#c9a96e;font-size:18px;margin-top:12px;">We\'ll be in touch. ✦</p>');
-  }
-  
-  // Open mailto as fallback to actually send to lizhima44@gmail.com
-  window.open('mailto:lizhima44@gmail.com?subject=' + subject + '&body=' + body);
-}
-</script>
-
 </body>
 </html>
